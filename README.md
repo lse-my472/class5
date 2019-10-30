@@ -28,4 +28,6 @@ You can do this from the main repository page, either next to your branch from t
 
 Once the "PR" has been submitted, one of the class instructors will be able to review it.  (These will be accepted only after Friday however, when the second group has completed its work!)
 
+# Presenting the work
 
+On the lab main computer, which is hooked up to the projector, we will have also cloned the repository from RStudio.  Once your branch is updated and pushed with your group's solution, we will be able to pull the remote to the local projector-connected machine, and then execute the code.  This will be how each group presents its solution, by walking through the Rmd code.
