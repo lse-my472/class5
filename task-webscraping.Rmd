@@ -4,3 +4,29 @@ Navigate to https://www.ourcommons.ca/Members/en/search.
 
 Can you scrape the Current Members into a data.frame (or tibble?)
 
+```{r}
+
+install.packages("rvest")
+library("rvest")
+
+
+url <- "https://www.ourcommons.ca/Members/en/search"
+html <- read_html(url) 
+ 
+
+
+pname <- html_nodes(html, xpath='//div[@class="ce-mip-mp-name"]') %>%
+ html_text()
+ 
+party <- html_nodes(html, xpath='//div[@class="ce-mip-mp-party"]') %>%
+ html_text()
+ 
+constituency <- html_nodes(html, xpath='//div[@class="ce-mip-mp-constituency"]')%>%
+ html_text
+
+province <-html_nodes(html, xpath='//div[@class="ce-mip-mp-province"]')%>%
+ html_text
+
+mps <- data.frame("Name" = pname, "Party" = party, "Constituency" = constituency, "Province" = province)
+
+```
