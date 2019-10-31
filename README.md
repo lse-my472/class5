@@ -3,12 +3,12 @@
 31/10/2019
 
 Group members: 
-Zhen Liu
-Jamila Wiggins 
-Yu Wong
-Yi Lin
-Irene Kim
-Huiyan Liu
+Zhen Liu.
+Jamila Wiggins. 
+Yu Wong.
+Yi Lin.
+Irene Kim.
+Huiyan Liu.
 
 
 We worked on task 'tidymanipulation.RMD'
