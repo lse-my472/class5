@@ -10,13 +10,13 @@ We will use the "tidyverse" of packages for this:
 ## load the tidyverse
 library(tidyverse)
 
-interviews <- read_csv("~/Downloads/SAFI_clean.csv", na = "NULL")
+interviews <- read_csv("C:/Users/ZHENLIU/Documents/2019LSEmodules/DScode/week5classpractice/class5/SAFI_clean.csv", na = "NULL")
 
 ## inspect the data
 interviews
 
 ## preview the data
-# View(interviews)
+View(interviews)
 ```
 
 ## Creating new variables
@@ -26,7 +26,14 @@ Create a new variable which is thse number of people per room.
 Compute a median of the number of people per room, for each village.
 
 Extra: Produce a boxplot of the number of people per room, by village.
+```{r}    
+## create a new varaible 
+interviews$ppr <- interviews$no_membrs/interviews$rooms
 
-    
-    
+q1<- aggregate(interviews$ppr, list(interviews$village), median)
+q1
 
+boxplot(ppr~village, interviews, xlab = "name of the village",
+   ylab = "number of people per room", main= "number of people per room in each village")   
+    
+```
