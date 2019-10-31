@@ -1,0 +1,6 @@
+# Advanced web scraping
+
+Navigate to https://www.ourcommons.ca/Members/en/search.
+
+Can you scrape the Current Members into a data.frame (or tibble?)
+

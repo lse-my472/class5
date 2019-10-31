@@ -1,3 +1,0 @@
-# Loop example
-
-Show some loops versus `lapply()``, `sapply()`, `vapply()`.

@@ -1,0 +1,42 @@
+# Debugging a function
+
+The code below is supposed to calculate the first x Fibonacci numbers, and to plot them in a 
+Fibonacci spiral.  Unfortunately it still contains an error and doesn’t work. 
+Use the R debugger to find and fix the problem.
+
+```{r}
+library("shape")
+plot_fib <- function(x){
+  plot(-max(x):max(x),-max(x):max(x),type="n",xlab="",ylab="",main="Fibonacchi spiral") #empty plot
+    x.coor <- c(0,0,cumsum(x*rep(c(1,0,-1,0),length=length(x)))) #x-coordinate for the center of the circle
+    y.coor <- c(0,0,cumsum(x*rep(c(0,1,0,-1),length=length(x)))) #y-coordinate for the center of the circle
+    a1 <- 0:length(x)*pi/2 #angle start
+    a2 <- 1:(length(x)+1)*p/2 #angle end 
+    for ( i in 1:length(x)){
+            plotcircle(r=x[i],mid=c(x.coor[i],y.coor[i]),from=a1[i],to=a2[i]) #plot the quartercircles
+        }
+  }
+
+fibonacci <- function(n) { #function to generate Fibonacci numbers
+  if (n==NaN){
+    break}
+  if (n==1) {
+        x <- 0
+    } else {
+        x <- c(0,1)
+        while (length(x) < n) {
+            position <- length(x)
+            new <- x[position] + x[position-1]
+            x <- c(x,new)
+        }
+    }
+    plot.Fib(x)
+        return(x)
+}
+```
+
+Hint: Make sure the function works when passing calling the function with these two values:
+```{r, eval = FALSE}
+fibonacci(x = 10)
+fibonacci(x = log(-1))
+```

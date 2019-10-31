@@ -1,0 +1,26 @@
+# Reshaping data
+
+## Getting the data
+
+Get the `SAFI_clean.csv` dataset, which you can read about and **download** from here: https://figshare.com/articles/SAFI_Survey_Results/6262019.
+
+```{r}    
+## load the tidyverse
+library(tidyverse)
+
+interviews <- read_csv("~/Downloads/SAFI_clean.csv", na = "NULL")
+
+## inspect the data
+interviews
+
+## preview the data
+# View(interviews)
+```
+s
+## Spreading
+
+Use `spread()` to create new columns of dummy variables for each type of wall construction material, to replace the multi-category variable `respondent_wall_type`.  Hint:  First create a new variable with constant `TRUE` logical type, that will be spread out for each categorical value of `respondent_wall_type`.
+
+## Gathering
+
+Use `gather()` to return to long format the data you created above.  Is there any special operation you need to do after this, and why?

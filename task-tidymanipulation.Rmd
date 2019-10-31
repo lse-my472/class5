@@ -1,0 +1,32 @@
+# Tidy manipulations and grouping operations
+
+## Getting the data
+
+Get the `SAFI_clean.csv` dataset, which you can read about and **download** from here: https://figshare.com/articles/SAFI_Survey_Results/6262019.
+
+We will use the "tidyverse" of packages for this:
+
+```{r}    
+## load the tidyverse
+library(tidyverse)
+
+interviews <- read_csv("~/Downloads/SAFI_clean.csv", na = "NULL")
+
+## inspect the data
+interviews
+
+## preview the data
+# View(interviews)
+```
+
+## Creating new variables
+
+Create a new variable which is thse number of people per room.  
+
+Compute a median of the number of people per room, for each village.
+
+Extra: Produce a boxplot of the number of people per room, by village.
+
+    
+    
+
