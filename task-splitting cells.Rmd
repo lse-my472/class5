@@ -8,14 +8,28 @@ Get the `SAFI_clean.csv` dataset, which you can read about and **download** from
 ## load the tidyverse
 library(tidyverse)
 
-interviews <- read_csv("~/Downloads/SAFI_clean.csv", na = "NULL")
+interviews <- read_csv("SAFI_clean.csv", na = "NULL")
 
 ## inspect the data
 interviews
 
 ## preview the data
-# View(interviews)
+View(interviews)
+
+attach(interviews)
+
+interviews <- separate_rows(interviews, items_owned,sep= ";")
+
+View(interviews)
+
+unique_item <- unique(interviews["items_owned"])
+test <- spread(data = interviews,items_owned, items_owned)
+view(test)
+new_table <- cbind(test$key_ID,!is.na(test[,15:31]))
+new_table
 ```
+
+
 
 ## Splitting cells
 
@@ -24,6 +38,7 @@ Some columns in this dataset contain multiple pieces of information. For example
 This task involves splitting that into multiple values, and then creating new variables that are logical, in wide format to indicate for each interviewee whether they owned this item or not.
 
 Hint: Try `separate_rows()`.  
+
 
 Hint: To create the logical value that will "spread", you should create a new variable that is a constant logical type that will be spread as different item variables.
 
