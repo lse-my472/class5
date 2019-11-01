@@ -38,5 +38,3 @@ library(ggplot2)
 ggplot(data = interviews, mapping = aes(y = numberPPR, x= village)) + 
   geom_boxplot()
 ```
-
-
