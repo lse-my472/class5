@@ -5,3 +5,28 @@ Navigate to https://www.ourcommons.ca/Members/en/search.
 Can you scrape the Current Members into a data.frame (or tibble?)
 
 Trial making a new branch change 
+
+```{r}
+library(rvest)
+
+url <- "https://www.ourcommons.ca/Members/en/search"
+html_code <- read_html(url)
+
+#option 1 - functions
+membernames <- html_text(html_nodes(html_code, css = ".ce-mip-mp-name"))
+partyaffiliation <- html_text(html_nodes(html_code, css = ".ce-mip-mp-party"))
+province <- html_text(html_nodes(html_code, css = ".ce-mip-mp-province"))
+
+memberframe <- data.frame(membernames, partyaffiliation, province)
+
+#option 2 -- best functioning 
+tables <- html_table(html_code, fill= TRUE)
+bettertable <- tables[[1]]
+
+#option 3 - super messy but promising
+weirdtable <- html_nodes(html_code, css = ".ce-mip-mp-province , .ce-mip-mp-party , .ce-mip-mp-name")
+
+```
+
+
+
